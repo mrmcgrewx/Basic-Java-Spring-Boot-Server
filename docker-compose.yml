@@ -1,0 +1,22 @@
+version: '3'
+
+volumes:
+  javaserverdata1:
+
+networks:
+  javaservernet1:
+
+services:
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - javaserverdata1:/data/db
+    command: --smallfiles
+    networks:
+      - javaservernet1
+  server:
+    build: .
+    ports:
+      - "3000:3000"

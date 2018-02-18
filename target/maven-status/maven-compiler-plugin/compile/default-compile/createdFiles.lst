@@ -1,0 +1,11 @@
+db/UserDBClient.class
+app/Application.class
+util/HashManager.class
+authentication/TokenManager.class
+util/DateManager.class
+db/DBClient.class
+db/UtilDBClient.class
+util/UUIDManager.class
+models/Client.class
+models/Credentials.class
+requests/UserRequests.class
