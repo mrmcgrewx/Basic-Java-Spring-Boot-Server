@@ -10,7 +10,7 @@ import org.bson.Document;
  */
 public class DBClient {
 
-    private static MongoClient mongoClient = new MongoClient();
+    private static MongoClient mongoClient = new MongoClient("mongodb://mongodb:27017");
 
     public static MongoDatabase getDatabase(String database) {
         return mongoClient.getDatabase(database);

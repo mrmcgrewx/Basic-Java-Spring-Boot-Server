@@ -17,6 +17,8 @@ services:
     networks:
       - javaservernet1
   server:
-    build: .
+    image: mrmcgrewx/javaserver:latest
     ports:
       - "3000:3000"
+    networks:
+      - javaservernet1

@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.kmc.mcgrew</groupId>
-    <artifactId>JavaServer</artifactId>
+    <artifactId>javaserver</artifactId>
     <version>0.1.0</version>
     <packaging>jar</packaging>
     <name>JavaServer</name>
