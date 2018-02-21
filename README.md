@@ -7,6 +7,7 @@ This project provides maven scripts so you can build and run the server. Dockerf
 
 ## Running Locally
 To run the server locally, build the project using maven and execute the jar with the following command:
+
 `./mvnw package && java -jar target/javaserver-0.1.0.jar`
 
 ## Running with docker
