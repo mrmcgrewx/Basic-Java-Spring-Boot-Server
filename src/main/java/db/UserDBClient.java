@@ -20,30 +20,21 @@ public class UserDBClient extends DBUtil {
     private static MongoDatabase userDatabase = DBClient.getDatabase("models");
     private static MongoCollection<Document> clientsCollection = DBClient.getCollection(userDatabase,"clients");
 
-    public void storeEvent() {
-        Document doc = new Document("name","MongoDB");
-        clientsCollection.insertOne(doc);
-    }
-
-    public void printCount() {
-        Document myDoc = clientsCollection.find().first();
-        System.out.println(myDoc.toJson());
-    }
-
     public static Integer createNewClient(Client client) {
         String username = client.getUsername();
+        String password = client.getPassword();
         String firstname = client.getFirstname();
         String lastname = client.getLastname();
         String email = client.getEmail();
 
-        if ((username == null) || (email == null) ||  (firstname == null) ||  (lastname == null)) {
+        if ((username == null) || (email == null) ||  (firstname == null) ||  (lastname == null) || (password == null)) {
             return 2;
         }
 
         Document doc = clientsCollection.find(eq("username",username)).first();
 
         if (doc == null) {
-            String hashedPW = HashManager.hashpw(client.getPassword());
+            String hashedPW = HashManager.hashpw(password);
             String uuid = UUIDManager.generateUUID();
 
             doc = new Document("id",uuid)

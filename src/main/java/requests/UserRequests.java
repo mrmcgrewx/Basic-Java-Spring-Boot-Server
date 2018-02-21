@@ -1,18 +1,14 @@
 package requests;
 
 import authentication.TokenManager;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import db.UserDBClient;
 import io.jsonwebtoken.Claims;
-import jdk.nashorn.internal.ir.ObjectNode;
 import org.json.simple.JSONObject;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import models.Client;
 import models.Credentials;
-
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * Created by kylemcgrew on 11/27/17.

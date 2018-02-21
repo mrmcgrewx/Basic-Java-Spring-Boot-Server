@@ -18,12 +18,9 @@ package app;
 import static org.junit.Assert.assertEquals;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import jdk.nashorn.internal.ir.ObjectNode;
-import jdk.nashorn.internal.parser.JSONParser;
 import models.Client;
 import models.Credentials;
 import models.Login;
-import org.json.simple.JSONObject;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -112,14 +109,12 @@ public class UserRequestTests {
 
         String token = user.getToken();
 
-
         restTemplate.getRestTemplate().setInterceptors(
                 Collections.singletonList((request, body, execution) -> {
                     request.getHeaders()
                             .add("Authorization",token);
                     return execution.execute(request, body);
                 }));
-
 
         ResponseEntity<String> entity2 = restTemplate
                 .getForEntity("http://localhost:" + this.port + "/client/verify",String.class);

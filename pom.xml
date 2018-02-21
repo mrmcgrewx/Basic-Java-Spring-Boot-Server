@@ -24,8 +24,6 @@
         <org.springframework.version>4.0.4.RELEASE</org.springframework.version>
     </properties>
 
-
-
     <build>
         <plugins>
             <plugin>
@@ -85,8 +83,8 @@
 
         <dependency>
             <groupId>org.mongodb</groupId>
-            <artifactId>mongodb-driver</artifactId>
-            <version>3.5.0</version>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>3.6.3</version>
         </dependency>
 
         <dependency>

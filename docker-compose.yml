@@ -17,7 +17,14 @@ services:
     networks:
       - javaservernet1
   server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        JAR_FILE: target/javaserver-0.1.0.jar
     image: mrmcgrewx/javaserver:latest
+    depends_on:
+      - mongodb
     ports:
       - "3000:3000"
     networks:
